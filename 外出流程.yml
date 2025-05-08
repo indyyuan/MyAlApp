@@ -1,0 +1,754 @@
+app:
+  description: ''
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: workflow
+  name: 外出流程1
+  use_icon_as_answer_icon: false
+kind: app
+version: 0.1.5
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        image_file_size_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        sourceType: start
+        targetType: parameter-extractor
+      id: 1745561347891-source-1745561799073-target
+      selected: false
+      source: '1745561347891'
+      sourceHandle: source
+      target: '1745561799073'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: parameter-extractor
+        targetType: knowledge-retrieval
+      id: 1745561799073-source-1745562203768-target
+      selected: false
+      source: '1745561799073'
+      sourceHandle: source
+      target: '1745562203768'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: knowledge-retrieval
+        targetType: llm
+      id: 1745562203768-source-1745562358912-target
+      selected: false
+      source: '1745562203768'
+      sourceHandle: source
+      target: '1745562358912'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: parameter-extractor
+      id: 1745562358912-source-1745563768739-target
+      selected: false
+      source: '1745562358912'
+      sourceHandle: source
+      target: '1745563768739'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: parameter-extractor
+        targetType: knowledge-retrieval
+      id: 1745563768739-source-1745566055931-target
+      selected: false
+      source: '1745563768739'
+      sourceHandle: source
+      target: '1745566055931'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: knowledge-retrieval
+        targetType: llm
+      id: 1745566055931-source-1745566161363-target
+      selected: false
+      source: '1745566055931'
+      sourceHandle: source
+      target: '1745566161363'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: parameter-extractor
+      id: 1745566161363-source-1745567034576-target
+      selected: false
+      source: '1745566161363'
+      sourceHandle: source
+      target: '1745567034576'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: parameter-extractor
+        targetType: knowledge-retrieval
+      id: 1745567034576-source-1745567285527-target
+      selected: false
+      source: '1745567034576'
+      sourceHandle: source
+      target: '1745567285527'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: knowledge-retrieval
+        targetType: llm
+      id: 1745567285527--1745567353503-target
+      selected: false
+      source: '1745567285527'
+      sourceHandle: source
+      target: '1745567353503'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: parameter-extractor
+      id: 1745567353503-source-1745746024944-target
+      source: '1745567353503'
+      sourceHandle: source
+      target: '1745746024944'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: parameter-extractor
+        targetType: knowledge-retrieval
+      id: 1745746024944-source-1745718688180-target
+      source: '1745746024944'
+      sourceHandle: source
+      target: '1745718688180'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: knowledge-retrieval
+        targetType: llm
+      id: 1745718688180-source-1745718737436-target
+      source: '1745718688180'
+      sourceHandle: source
+      target: '1745718737436'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        sourceType: llm
+        targetType: end
+      id: 1745718737436-source-1745719958564-target
+      source: '1745718737436'
+      sourceHandle: source
+      target: '1745719958564'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: 开始
+        type: start
+        variables:
+        - label: 外出申请
+          max_length: 256
+          options: []
+          required: true
+          type: text-input
+          variable: input
+      height: 90
+      id: '1745561347891'
+      position:
+        x: 30
+        y: 284
+      positionAbsolute:
+        x: 30
+        y: 284
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        instruction: '从{{#1745561347891.input#}}文本中提取以下参数：
+
+          学校名称
+
+          外出地点：格式为{省}{市}{乡镇}，如果未提供省名，请自行判断省名，如果未提供市名则默认为浏阳市，如果只提供了乡镇名，则默认浏阳市
+
+          人数'
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: qwen-max
+          provider: tongyi
+        parameters:
+        - description: 学校名称
+          name: school
+          required: false
+          type: string
+        - description: 外出地点
+          name: out_address
+          required: false
+          type: string
+        - description: 人数
+          name: number
+          required: false
+          type: number
+        query:
+        - '1745561347891'
+        - input
+        reasoning_mode: prompt
+        selected: false
+        title: 申请参数
+        type: parameter-extractor
+        variables: []
+        vision:
+          enabled: false
+      height: 98
+      id: '1745561799073'
+      position:
+        x: 334
+        y: 284
+      positionAbsolute:
+        x: 334
+        y: 284
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        dataset_ids:
+        - 2875c76e-b8d9-45a2-b0a9-cbee5ce33ad5
+        desc: ''
+        multiple_retrieval_config:
+          reranking_enable: true
+          reranking_mode: reranking_model
+          reranking_model:
+            model: gte-rerank
+            provider: tongyi
+          top_k: 4
+        query_variable_selector:
+        - '1745561799073'
+        - school
+        retrieval_mode: multiple
+        selected: false
+        title: 学校查询
+        type: knowledge-retrieval
+      height: 92
+      id: '1745562203768'
+      position:
+        x: 638
+        y: 284
+      positionAbsolute:
+        x: 638
+        y: 284
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1745562203768'
+          - result
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: qwen-max
+          provider: tongyi
+        prompt_template:
+        - id: 9d12d60f-1d9d-4b7c-97ea-61005e3ccb29
+          role: system
+          text: '从<school>之间的markdown表格中匹配与输入学校名称一致的学校信息，输出：
+
+            学校类型、归属地、校长
+
+            <school>{{#context#}}<school>'
+        - id: da986272-5680-4641-b575-7b066b178b4a
+          role: user
+          text: '{{#1745561799073.school#}}'
+        selected: false
+        title: 学校信息匹配
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 98
+      id: '1745562358912'
+      position:
+        x: 942
+        y: 284
+      positionAbsolute:
+        x: 942
+        y: 284
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        instruction: '从{{#1745562358912.text#}}提取
+
+          学校类型
+
+          归属地
+
+          校长'
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: qwen-max
+          provider: tongyi
+        parameters:
+        - description: 学校类型
+          name: schoo_type
+          required: false
+          type: string
+        - description: 归属地
+          name: school_local
+          required: false
+          type: string
+        - description: 校长
+          name: school_leader
+          required: false
+          type: string
+        - description: 起止地
+          name: from_to
+          required: false
+          type: string
+        query:
+        - '1745562358912'
+        - text
+        reasoning_mode: prompt
+        selected: false
+        title: 提取学校参数
+        type: parameter-extractor
+        variables: []
+        vision:
+          enabled: false
+      height: 98
+      id: '1745563768739'
+      position:
+        x: 1246
+        y: 284
+      positionAbsolute:
+        x: 1246
+        y: 284
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        dataset_ids:
+        - 2875c76e-b8d9-45a2-b0a9-cbee5ce33ad5
+        desc: ''
+        multiple_retrieval_config:
+          reranking_enable: true
+          reranking_mode: reranking_model
+          reranking_model:
+            model: gte-rerank
+            provider: tongyi
+          top_k: 4
+        query_variable_selector:
+        - '1745561799073'
+        - out_address
+        retrieval_mode: multiple
+        selected: false
+        title: 外出分类查询
+        type: knowledge-retrieval
+      height: 92
+      id: '1745566055931'
+      position:
+        x: 1550
+        y: 284
+      positionAbsolute:
+        x: 1550
+        y: 284
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1745566055931'
+          - result
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: qwen-max
+          provider: tongyi
+        prompt_template:
+        - id: cac698f6-839a-4e55-9fc6-2d8be5b82c0e
+          role: system
+          text: '从<out>之间的markdown表格中根据输入学校归属地、外出地址，输出与分类规则相符的外出类型
+
+            <out>{{#context#}}<out>'
+        - id: 8cf52380-b4f0-492f-84b6-b95e78fcfd30
+          role: user
+          text: '学校归属地：{{#1745563768739.school_local#}}
+
+            外出地址：{{#1745561799073.out_address#}}'
+        selected: false
+        title: 外出类型匹配
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 98
+      id: '1745566161363'
+      position:
+        x: 1854
+        y: 284
+      positionAbsolute:
+        x: 1854
+        y: 284
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        instruction: 从{{#1745566161363.text#}}中提取流程名称
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: qwen-max
+          provider: tongyi
+        parameters:
+        - description: 外出流程名称
+          name: out_flow
+          required: false
+          type: string
+        query:
+        - '1745566161363'
+        - text
+        reasoning_mode: prompt
+        selected: false
+        title: 提取外出流程
+        type: parameter-extractor
+        variables: []
+        vision:
+          enabled: false
+      height: 98
+      id: '1745567034576'
+      position:
+        x: 2158
+        y: 284
+      positionAbsolute:
+        x: 2158
+        y: 284
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        dataset_ids:
+        - 2875c76e-b8d9-45a2-b0a9-cbee5ce33ad5
+        desc: ''
+        multiple_retrieval_config:
+          reranking_enable: true
+          reranking_mode: reranking_model
+          reranking_model:
+            model: gte-rerank
+            provider: tongyi
+          top_k: 4
+        query_variable_selector:
+        - '1745567034576'
+        - out_flow
+        retrieval_mode: multiple
+        selected: false
+        title: 查询流程
+        type: knowledge-retrieval
+      height: 92
+      id: '1745567285527'
+      position:
+        x: 2462
+        y: 284
+      positionAbsolute:
+        x: 2462
+        y: 284
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1745567285527'
+          - result
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: qwen-max
+          provider: tongyi
+        prompt_template:
+        - id: 23dc2b55-3c6d-41a1-8d14-a017222f90a5
+          role: system
+          text: '请在<flow>之间的markdown文本中匹配与输入流程名称一致的流程信息，并输出此流程与学校类型、人数相匹配的流程环节。
+
+            <flow>{{#context#}}<flow>'
+        - id: 6e0a880c-53cc-4558-a6e4-79488d5849e0
+          role: user
+          text: '流程名称：{{#1745567034576.out_flow#}}
+
+            学校类型：{{#1745563768739.schoo_type#}}
+
+            校长：{{#1745563768739.school_leader#}}
+
+            人数：{{#1745561799073.number#}}'
+        selected: false
+        title: 流程匹配
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 98
+      id: '1745567353503'
+      position:
+        x: 2766
+        y: 284
+      positionAbsolute:
+        x: 2766
+        y: 284
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        dataset_ids:
+        - 2875c76e-b8d9-45a2-b0a9-cbee5ce33ad5
+        desc: ''
+        multiple_retrieval_config:
+          reranking_enable: true
+          reranking_mode: reranking_model
+          reranking_model:
+            model: gte-rerank
+            provider: tongyi
+          top_k: 4
+        query_variable_selector:
+        - '1745746024944'
+        - roles
+        retrieval_mode: multiple
+        selected: false
+        title: 查询审批人
+        type: knowledge-retrieval
+      height: 92
+      id: '1745718688180'
+      position:
+        x: 3374
+        y: 284
+      positionAbsolute:
+        x: 3374
+        y: 284
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1745718688180'
+          - result
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: qwen-max
+          provider: tongyi
+        prompt_template:
+        - id: 9be2815a-9c3c-4b7c-af31-671eb65cf241
+          role: system
+          text: '从<org>之间的人员信息中，对流程环节中的处理角色设定实际处理人。
+
+            <org>{{#context#}}<org>'
+        - id: 79f409ab-dc6a-4869-8a8e-3f67552efac8
+          role: user
+          text: '流程环节：
+
+            {{#1745567353503.text#}}'
+        selected: false
+        title: 设定处理人
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 98
+      id: '1745718737436'
+      position:
+        x: 3678
+        y: 284
+      positionAbsolute:
+        x: 3678
+        y: 284
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1745561347891'
+          - input
+          variable: input
+        - value_selector:
+          - '1745566161363'
+          - text
+          variable: out_type
+        - value_selector:
+          - '1745567034576'
+          - out_flow
+          variable: flow_type
+        - value_selector:
+          - '1745718737436'
+          - text
+          variable: flow_detail
+        selected: false
+        title: 结束
+        type: end
+      height: 168
+      id: '1745719958564'
+      position:
+        x: 3982
+        y: 284
+      positionAbsolute:
+        x: 3982
+        y: 284
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        instruction: 将{{#1745567353503.text#}}中的各个审批角色提取到审批角色列表中
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: qwen-max
+          provider: tongyi
+        parameters:
+        - description: 审批角色列表
+          name: roles
+          required: false
+          type: string
+        query:
+        - '1745567353503'
+        - text
+        reasoning_mode: prompt
+        selected: false
+        title: 提取审批角色
+        type: parameter-extractor
+        variables: []
+        vision:
+          enabled: false
+      height: 98
+      id: '1745746024944'
+      position:
+        x: 3070
+        y: 284
+      positionAbsolute:
+        x: 3070
+        y: 284
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    viewport:
+      x: -4513.835316474212
+      y: -102.5076502101632
+      zoom: 1.218770788614574
